@@ -11,3 +11,17 @@ D:\projects\training\programming\delegates\delegates\obj\Debug\netcoreapp3.1\InD
 D:\projects\training\programming\delegates\delegates\obj\Debug\netcoreapp3.1\InDepth.dll
 D:\projects\training\programming\delegates\delegates\obj\Debug\netcoreapp3.1\InDepth.pdb
 D:\projects\training\programming\delegates\delegates\obj\Debug\netcoreapp3.1\InDepth.genruntimeconfig.cache
+D:\projects\training\programming\InDepth\InDepth\bin\Debug\netcoreapp3.1\InDepth.exe
+D:\projects\training\programming\InDepth\InDepth\bin\Debug\netcoreapp3.1\InDepth.deps.json
+D:\projects\training\programming\InDepth\InDepth\bin\Debug\netcoreapp3.1\InDepth.runtimeconfig.json
+D:\projects\training\programming\InDepth\InDepth\bin\Debug\netcoreapp3.1\InDepth.runtimeconfig.dev.json
+D:\projects\training\programming\InDepth\InDepth\bin\Debug\netcoreapp3.1\InDepth.dll
+D:\projects\training\programming\InDepth\InDepth\bin\Debug\netcoreapp3.1\InDepth.pdb
+D:\projects\training\programming\InDepth\InDepth\obj\Debug\netcoreapp3.1\InDepth.csproj.AssemblyReference.cache
+D:\projects\training\programming\InDepth\InDepth\obj\Debug\netcoreapp3.1\InDepth.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\training\programming\InDepth\InDepth\obj\Debug\netcoreapp3.1\InDepth.AssemblyInfoInputs.cache
+D:\projects\training\programming\InDepth\InDepth\obj\Debug\netcoreapp3.1\InDepth.AssemblyInfo.cs
+D:\projects\training\programming\InDepth\InDepth\obj\Debug\netcoreapp3.1\InDepth.csproj.CoreCompileInputs.cache
+D:\projects\training\programming\InDepth\InDepth\obj\Debug\netcoreapp3.1\InDepth.dll
+D:\projects\training\programming\InDepth\InDepth\obj\Debug\netcoreapp3.1\InDepth.pdb
+D:\projects\training\programming\InDepth\InDepth\obj\Debug\netcoreapp3.1\InDepth.genruntimeconfig.cache
