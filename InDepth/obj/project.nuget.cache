@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ToScf+kSTyxou1aJHZLK0X7SsW9ONLoBB6WXHrYNtF4Xj36+iSdjmgmOyQk4XhwE+p+UW+nc/7S6C9e7IRXGSA==",
+  "dgSpecHash": "/DczJVT+1HFYULpg4BlLF3lAm11mnc0LkudqdLaoj/gwYXc2Lw0ygDffIIxrLDFwykV7xa+n1HdrFa4QXJSlIQ==",
   "success": true,
   "projectFilePath": "D:\\projects\\training\\programming\\InDepth\\InDepth\\InDepth.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\mohse\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.29\\microsoft.netcore.app.host.win-x64.3.1.29.nupkg.sha512",
-    "C:\\Users\\mohse\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
     "C:\\Users\\mohse\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\mohse\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+    "C:\\Users\\mohse\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\mohse\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\mohse\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.31\\microsoft.netcore.app.host.win-x64.3.1.31.nupkg.sha512"
   ],
   "logs": []
 }
