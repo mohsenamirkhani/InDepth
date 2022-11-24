@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 using InDepth;
+using static System.FormattableString;
 
 namespace delegates
 {
@@ -144,32 +145,32 @@ namespace delegates
 
             /************** String Format and Alignment *****************/
 
-            Console.WriteLine("{0, -11}{1}", "----------", "1");
+            //Console.WriteLine("{0, -11}{1}", "----------", "1");
 
-            var price = 95.25m;
-            var tip = price * 0.2m;
-            // 11 points to right from the starting of opening '{'
-            Console.WriteLine("Price: {0,11:C}", price);
-            Console.WriteLine("Tip:   {0,11:C}", tip);
-            Console.WriteLine("Total: {0,11:C}", price + tip);
+            //var price = 95.25m;
+            //var tip = price * 0.2m;
+            //// 11 points to right from the starting of opening '{'
+            //Console.WriteLine("Price: {0,11:C}", price);
+            //Console.WriteLine("Tip:   {0,11:C}", tip);
+            //Console.WriteLine("Total: {0,11:C}", price + tip);
 
-            Console.WriteLine($"Price: {price,11:C}");
-            Console.WriteLine($"Tip:   {tip,11:C}");
-            Console.WriteLine($"Total: {price + tip,11:C}");
+            //Console.WriteLine($"Price: {price,11:C}");
+            //Console.WriteLine($"Tip:   {tip,11:C}");
+            //Console.WriteLine($"Total: {price + tip,11:C}");
 
             // Interpolation and verbatim
             // Interpolation would exactly convert to string.Format in IL
-            Console.WriteLine($@"Price: {price,11:C}
-Tip:   {tip,11:C}
-Total: {price + tip,11:C}");
+//            Console.WriteLine($@"Price: {price,11:C}
+//Tip:   {tip,11:C}
+//Total: {price + tip,11:C}");
 
 
-            var culture = CultureInfo.GetCultureInfo("fa-IR");
-            var date = new DateTime(1992, 6, 29);
-            var str = string.Format(CultureInfo.InvariantCulture, "My BirthDay is {0:d}", date);
-            Console.WriteLine(str);
+//            var culture = CultureInfo.GetCultureInfo("fa-IR");
+//            var date = new DateTime(1992, 6, 29);
+//            var str = string.Format(CultureInfo.InvariantCulture, "My BirthDay is {0:d}", date);
+//            Console.WriteLine(str);
 
-            var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+//            var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
 
             //foreach (var cultureInfo in cultures)
             //{
@@ -180,13 +181,29 @@ Total: {price + tip,11:C}");
             //}
             
 
-            var verbatim = @"Hello The ""Date"" is";
-            Console.WriteLine(verbatim.ToString(culture));
+            //var verbatim = @"Hello The ""Date"" is";
+            //Console.WriteLine(verbatim.ToString(culture));
 
-            var invariantFormattableString = FormattableString.Invariant(@$"{verbatim} {date}");
+            //var invariantFormattableString = FormattableString.Invariant(@$"{verbatim} {date}");
 
-            var result = $"The result is {invariantFormattableString}";
-            Console.WriteLine(result);
+            //var result = $"The result is {invariantFormattableString}";
+            //Console.WriteLine(result);
+
+            //var name = "mohsen";
+            //var age = 30;
+
+            //FormattableString formattable = $"Hello My Name is {name} and my age is {age}";
+
+            //foreach (var argument in formattable.GetArguments())
+            //{
+            //    Console.WriteLine(argument);
+            //}
+
+            
+            //var alignment = Console.ReadLine();
+            //var price = 12d;
+            //// As the book said "This isn't code I'd want to either write or read
+            //Console.WriteLine($"Price: {{0,{alignment}:C}}", price);
         }
     }
 }
