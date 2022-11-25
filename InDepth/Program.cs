@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text;
 using System.Threading.Tasks;
 using InDepth;
 using static System.FormattableString;
@@ -160,17 +161,17 @@ namespace delegates
 
             // Interpolation and verbatim
             // Interpolation would exactly convert to string.Format in IL
-//            Console.WriteLine($@"Price: {price,11:C}
-//Tip:   {tip,11:C}
-//Total: {price + tip,11:C}");
+            //            Console.WriteLine($@"Price: {price,11:C}
+            //Tip:   {tip,11:C}
+            //Total: {price + tip,11:C}");
 
 
-//            var culture = CultureInfo.GetCultureInfo("fa-IR");
-//            var date = new DateTime(1992, 6, 29);
-//            var str = string.Format(CultureInfo.InvariantCulture, "My BirthDay is {0:d}", date);
-//            Console.WriteLine(str);
+            //            var culture = CultureInfo.GetCultureInfo("fa-IR");
+            //            var date = new DateTime(1992, 6, 29);
+            //            var str = string.Format(CultureInfo.InvariantCulture, "My BirthDay is {0:d}", date);
+            //            Console.WriteLine(str);
 
-//            var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            //            var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
 
             //foreach (var cultureInfo in cultures)
             //{
@@ -179,7 +180,7 @@ namespace delegates
             //    var c = string.Format(cultureInfo, "{0,-15} {1,12:d}", cultureInfo.Name, date);
             //    Console.WriteLine(c);
             //}
-            
+
 
             //var verbatim = @"Hello The ""Date"" is";
             //Console.WriteLine(verbatim.ToString(culture));
@@ -199,11 +200,75 @@ namespace delegates
             //    Console.WriteLine(argument);
             //}
 
-            
+
             //var alignment = Console.ReadLine();
             //var price = 12d;
             //// As the book said "This isn't code I'd want to either write or read
             //Console.WriteLine($"Price: {{0,{alignment}:C}}", price);
+
+
+
+
+
+
+
+
+
+            /***************** Indexers and Object initializer *******************/
+
+            //var text = "This Is A Text To Truncate";
+
+            //var stringBuilder = new StringBuilder(text)
+            //{
+            //    Length = 8,
+            //    [7] = '\u2026'
+            //};
+            //Console.OutputEncoding = Encoding.UTF8;
+            //Console.WriteLine(stringBuilder);
+
+            //// With Collection initializer this code would throw an Exception 
+            //// 'An item with the same key has already been added. Key: B'
+            //var collectionInitializer = new Dictionary<string, int>()
+            //{
+            //    { "A", 10 },
+            //    { "B", 20 },
+            //    { "B", 30 }
+            //};
+
+
+            //// In DICTIONARY with object initializer the 'B' key would overwrites
+            //var objectInitializer = new Dictionary<string, int>()
+            //{
+            //    ["A"] = 10,
+            //    ["B"] = 20,
+            //    ["B"] = 30
+            //};
+
+            //Console.WriteLine(objectInitializer["A"]);
+            //Console.WriteLine(objectInitializer["B"]);
+
+
+            //use the Add method of the class to be able to add members as COLLECTION initializer
+            var indexerCollectionInitializer = new IndexerInObjectInitializer<int>
+            {
+                { "mohsen", 20 },
+                { "Narges", 30 }
+            };
+            indexerCollectionInitializer.Key = "ss";
+
+            Console.Write(indexerCollectionInitializer);
+
+
+            // but defining indexer and using it in OBJECT initializer we can add initiation for other properties too.
+            var indexerObjectInitializer = new IndexerInObjectInitializer<int>
+            {
+                ["mohsen"] = 10,
+                ["narges"] = 30,
+                Key = "30",
+                ParentKey = indexerCollectionInitializer.Key
+            };
+
+            Console.WriteLine(indexerObjectInitializer);
         }
     }
 }
