@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using InDepth;
 using static System.FormattableString;
+using static Extentions.CollectionInitializerAddList;
 
 namespace delegates
 {
@@ -248,27 +250,79 @@ namespace delegates
             //Console.WriteLine(objectInitializer["B"]);
 
 
-            //use the Add method of the class to be able to add members as COLLECTION initializer
-            var indexerCollectionInitializer = new IndexerInObjectInitializer<int>
-            {
-                { "mohsen", 20 },
-                { "Narges", 30 }
-            };
-            indexerCollectionInitializer.Key = "ss";
+            ////use the Add method of the class to be able to add members as COLLECTION initializer
+            //var indexerCollectionInitializer = new IndexerInObjectInitializer<int>
+            //{
+            //    { "mohsen", 20 },
+            //    { "Narges", 30 }
+            //};
+            //indexerCollectionInitializer.Key = "ss";
 
-            Console.Write(indexerCollectionInitializer);
+            //Console.Write(indexerCollectionInitializer);
 
 
-            // but defining indexer and using it in OBJECT initializer we can add initiation for other properties too.
-            var indexerObjectInitializer = new IndexerInObjectInitializer<int>
-            {
-                ["mohsen"] = 10,
-                ["narges"] = 30,
-                Key = "30",
-                ParentKey = indexerCollectionInitializer.Key
-            };
+            //// but defining indexer and using it in OBJECT initializer we can add initiation for other properties too.
+            //var indexerObjectInitializer = new IndexerInObjectInitializer<int>
+            //{
+            //    ["mohsen"] = 10,
+            //    ["narges"] = 30,
+            //    Key = "30",
+            //    ParentKey = indexerCollectionInitializer.Key
+            //};
 
-            Console.WriteLine(indexerObjectInitializer);
+            //Console.WriteLine(indexerObjectInitializer);
+
+
+            //var list = new List<string>()
+            //{
+            //    10,
+            //    "mohsen",
+            //    { 20, 3 }
+            //};
+
+            //var dictionary = new Dictionary<string, string>()
+            //{
+            //    {"mohsen", "amirkhani"}
+            //};
+
+            //foreach (var d in dictionary)
+            //{
+            //    Console.WriteLine(d.Value);
+            //}
+
+            //foreach (var l in list)
+            //{
+
+            //    Console.WriteLine(l);
+            //}
+
+            //var person = new Person("narges")
+            //{
+            //    // This should work with extension methods but not working
+            //    Contacts = { new List<string> { "mohsen", "amir" } }
+            //};
+
+            // Console.WriteLine(person);
+
+
+
+
+
+
+
+
+            /**************** Null Conditional *****************/
+
+            var persons = new List<Person>();
+
+            // adding null conditional would change the type of bool to bool? (Nullable<bool>)
+            persons.Where(p => p.Child.Child.Child.Name.Equals("Mohsen"));
+
+            // The Equal method won't handle the null so we should change it by "?? false" or " == true"
+            persons.Where(p => p.Child?.Child?.Child?.Name.Equals("Mohsen") ?? false);
+
+            // The == sign would automatically Handles the nullability and returns false in case of null
+            persons.Where(p => p.Child?.Child?.Child?.Name == "Mohsen");
         }
     }
 }
