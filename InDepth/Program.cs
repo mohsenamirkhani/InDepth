@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using InDepth;
 using static System.FormattableString;
 using static Extentions.CollectionInitializerAddList;
+using InDepth.Retry;
 
 namespace delegates
 {
@@ -313,16 +314,33 @@ namespace delegates
 
             /**************** Null Conditional *****************/
 
-            var persons = new List<Person>();
+            //var persons = new List<Person>();
 
-            // adding null conditional would change the type of bool to bool? (Nullable<bool>)
-            persons.Where(p => p.Child.Child.Child.Name.Equals("Mohsen"));
+            //// adding null conditional would change the type of bool to bool? (Nullable<bool>)
+            //persons.Where(p => p.Child.Child.Child.Name.Equals("Mohsen"));
 
-            // The Equal method won't handle the null so we should change it by "?? false" or " == true"
-            persons.Where(p => p.Child?.Child?.Child?.Name.Equals("Mohsen") ?? false);
+            //// The Equal method won't handle the null so we should change it by "?? false" or " == true"
+            //persons.Where(p => p.Child?.Child?.Child?.Name.Equals("Mohsen") ?? false);
 
-            // The == sign would automatically Handles the nullability and returns false in case of null
-            persons.Where(p => p.Child?.Child?.Child?.Name == "Mohsen");
+            //// The == sign would automatically Handles the nullability and returns false in case of null
+            //persons.Where(p => p.Child?.Child?.Child?.Name == "Mohsen");
+
+
+
+            /**************** Exception Filter *****************/
+
+            var exFilter = new ExceptionFilter();
+
+            exFilter.Bottom();
+
+            Func<string> function = () =>
+            {
+                Console.WriteLine("has been called");
+                throw new Exception("Customized Mohsen Error");
+                //return "x.ToString()";
+            };
+
+            function.Retry(10);
         }
     }
 }
